@@ -1,6 +1,6 @@
 # naija-state-local-government
 
-A simple utility library that lists Nigeria states and local governments
+A simple utility library that lists Nigeria states and local governments with zero dependency
 
 ### Installation
 
