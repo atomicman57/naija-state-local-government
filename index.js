@@ -1,7 +1,9 @@
 var statesAndLocalGov = require('./src/statesAndLocalGov.json')
 
 module.exports = {
-    all: statesAndLocalGov,
+    all: function() {
+        return statesAndLocalGov
+    },
     states: function () {
         var naijaStates = [];
         statesAndLocalGov.map(function (nigeriaStates){
