@@ -15,8 +15,12 @@ npm install naija-state-local-government
 ### Example
 
 ``` Javascript/Node
+//ES5
+const NaijaStates = require('naija-state-local-government');
 
+// ES6
 import NaijaStates from 'naija-state-local-government';
+
 console.log(NaijaStates.all());
 console.log(NaijaStates.states());
 console.log(NaijaStates.lgas("Oyo"))
