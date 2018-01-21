@@ -1,0 +1,31 @@
+{
+  "name": "naija-state-local-government",
+  "version": "1.0.0",
+  "description": "A simple utility library that lists Nigeria states and local governments",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomicman57/naija-state-local-government.git"
+  },
+  "keywords": [
+    "nigeria",
+    "states",
+    "country",
+    "local",
+    "government",
+    "nodejs",
+    "react",
+    "capital",
+    "city",
+    "naija"
+  ],
+  "author": "Philips Blessing",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atomicman57/naija-state-local-government/issues"
+  },
+  "homepage": "https://github.com/atomicman57/naija-state-local-government#readme"
+}
