@@ -1,4 +1,4 @@
-var statesAndLocalGov = require('./src/statesAndLocalGov.json')
+var statesAndLocalGov = require('./src/statesAndLocalGov.json');
 
 function _lower(input) {
     return input.toLowerCase().trim()
@@ -28,4 +28,4 @@ module.exports = {
             return _lower(nigeriaStates.state) === _lower(state);
         });
     }
-  };
+};
