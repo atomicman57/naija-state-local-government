@@ -1,5 +1,7 @@
 # naija-state-local-government
 
+[![NPM](https://nodei.co/npm/naija-state-local-government.png)](https://nodei.co/npm/naija-state-local-government/)
+
 [![npm version](https://badge.fury.io/js/naija-state-local-government.svg)](https://www.npmjs.com/package/naija-state-local-government)
 
 A simple utility library that lists Nigeria states and local governments with zero dependency

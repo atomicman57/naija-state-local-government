@@ -1,6 +1,6 @@
 {
   "name": "naija-state-local-government",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A simple utility library that lists Nigeria states and local governments with zero dependency",
   "main": "index.js",
   "scripts": {
