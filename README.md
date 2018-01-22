@@ -29,6 +29,14 @@ console.log(NaijaStates.lgas("Oyo"))
 
 ```
 
+### Sample Usage
+#### States
+![alt](https://preview.ibb.co/iGaoGw/Screen_Shot_2018_01_22_at_12_39_46_PM.png)
+
+#### LGAs
+![alt](https://preview.ibb.co/mxrjpG/Screen_Shot_2018_01_22_at_12_40_09_PM.png)
+
+
 | function    | argument                                            | response                                            |   |   |
 |-------------|-----------------------------------------------------|-----------------------------------------------------|---|---|
 | .all()      | none                                                | it returns all states and local government          |   |   |
