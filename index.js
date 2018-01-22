@@ -1,30 +1,31 @@
 var statesAndLocalGov = require('./src/statesAndLocalGov.json')
 
+function _lower(input) {
+    return input.toLowerCase().trim()
+}
+
 module.exports = {
     all: function() {
-        return statesAndLocalGov
+        return statesAndLocalGov;
     },
     states: function () {
-        var naijaStates = [];
-        statesAndLocalGov.map(function (nigeriaStates){
-            return naijaStates.push(nigeriaStates.state)
-        })
-        return naijaStates;
+        return statesAndLocalGov.map(function (nigeriaStates) {
+            return nigeriaStates.state;
+        });
     },
     lgas: function (state) {
-        state = state.toLowerCase().trim();
-        if(!state || state == ""){
+        state = _lower(state);
+
+        if (!state || state == "") {
             throw new Error('Invalid Nigeria State');
         }
-        if (state === 'fct' || state === 'f.c.t' || state === 'abuja' || state === 'f c t'){
+
+        if (['fct', 'f.c.t', 'abuja', 'f c t'].includes(state)) {
             state = 'Federal Capital Territory'
         }
-        var stateLocalGov;
-        statesAndLocalGov.map(function (nigeriaStates) {
-            if (nigeriaStates.state.toLowerCase() === state.toLowerCase().trim()){
-            return stateLocalGov = nigeriaStates.lgas;
-            }
-        })
-        return stateLocalGov;
+
+        return statesAndLocalGov.find(function (nigeriaStates) {
+            return _lower(nigeriaStates.state) === _lower(state);
+        });
     }
   };
