@@ -21,7 +21,7 @@ describe('naija-state-local-gov', function() {
         assert.equal(response.length, 37);
         assert.equal(typeof response, typeof []);
         assert.equal(response[1], statesAndLocalGov[1].state);
-        assert.equal(response[37], 'Zamfara');
+        assert.equal(response[36], 'Zamfara');
     });
 
     it('#lgas()', function() {
