@@ -24,10 +24,16 @@ describe('naija-state-local-gov', function() {
         assert.equal(response[36], 'Zamfara');
     });
 
+    it('#senatorial_districts()', function() {
+        var response = naijaStates.senatorial_districts('Lagos');
+       
+        assert.equal(response.length, 3);
+    });
+
     it('#lgas()', function() {
         var response = naijaStates.lgas('Lagos');
 
         assert.equal(response.state, 'Lagos');
-        assert.equal(response.lgas.length, 23);
+        assert.equal(response.lgas.length, 21);
     });
 });

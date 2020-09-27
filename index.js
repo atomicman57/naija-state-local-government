@@ -20,9 +20,14 @@ module.exports = {
             throw new Error('Invalid Nigeria State');
         }
 
-        return statesAndLocalGov.find(function (nigeriaStates) {
-            return (_lower(nigeriaStates.state) === _lower(state)) ? nigeriaStates.senatorial_districts : 'not found'
+        if (['fct', 'f.c.t', 'abuja', 'f c t'].includes(state)) {
+            state = 'Federal Capital Territory'
+        }
+
+        const response = statesAndLocalGov.find(function (nigeriaStates) {
+            return _lower(nigeriaStates.state) === _lower(state);
         });
+        return response.senatorial_districts;
     },
     lgas: function (state) {
         state = _lower(state);
