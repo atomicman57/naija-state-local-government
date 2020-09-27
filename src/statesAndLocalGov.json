@@ -1,6 +1,11 @@
 [
     {
       "state": "Abia",
+      "senatorial_districts": [
+        "Abia Central", 
+        "Abia North", 
+        "Abia South"
+      ],
       "lgas": [
         "Aba North",
         "Arochukwu",
@@ -19,6 +24,11 @@
     },
     {
       "state": "Adamawa",
+      "senatorial_districts": [
+        "Adamawa Central",
+        "Adamawa North",
+        "Adamawa South"
+      ],
       "lgas": [
         "Demsa",
         "Fufore",
@@ -44,6 +54,11 @@
     },
     {
       "state": "Akwa Ibom",
+      "senatorial_districts": [
+        "Akwa Ibom North East",
+        "Akwa Ibom North West",
+        "Akwa Ibom South"
+      ],
       "lgas": [
         "Abak",
         "Eastern Obolo",
@@ -80,6 +95,11 @@
     },
     {
       "state": "Anambra",
+      "senatorial_districts": [
+        "Anambra Central",
+        "Anambra North",
+        "Anambra South"
+      ],
       "lgas": [
         "Aguata",
         "Akwa North",
@@ -113,6 +133,11 @@
     },
     {
       "state": "Bauchi",
+      "senatorial_districts": [
+        "Bauchi Central",
+        "Bauchi North",
+        "Bauchi South"
+      ],
       "lgas": [
         "Alkaleri",
         "Bauchi",
@@ -138,6 +163,11 @@
     },
     {
       "state": "Benue",
+      "senatorial_districts": [
+        "Benue North East",
+        "Benue North West",
+        "Benue South"
+      ],
       "lgas": [
         "Ado",
         "Agatu",
@@ -165,6 +195,11 @@
     },
     {
       "state": "Borno",
+      "senatorial_districts": [
+        "Borno Central",
+        "Borno North",
+        "Borno South"
+      ],
       "lgas": [
         "Abadan",
         "Askira-Uba",
@@ -197,6 +232,11 @@
     },
     {
       "state": "Bayelsa",
+      "senatorial_districts": [
+        "Bayelsa Central",
+        "Bayelsa East",
+        "Bayelsa West"
+        ],
       "lgas": [
         "Adagbabiri",
         "Brass",
@@ -214,6 +254,11 @@
     },
     {
       "state": "Cross River",
+      "senatorial_districts": [
+        "Cross River Central",
+        "Cross River North",
+        "Cross River South"
+      ],
       "lgas": [
         "Abi",
         "Abuochichie",
@@ -239,6 +284,11 @@
     },
     {
       "state": "Delta",
+      "senatorial_districts": [
+        "Delta Central",
+        "Delta North",
+        "Delta South"
+      ],
       "lgas": [
         "Aniocha North",
         "Aniocha-North",
@@ -289,6 +339,11 @@
     },
     {
       "state": "Ebonyi",
+      "senatorial_districts": [
+        "Ebonyi South",
+        "Ebonyi Central",
+        "Ebonyi North"
+      ],
       "lgas": [
         "Abakaliki",
         "Afikpo-North",
@@ -309,6 +364,11 @@
     },
     {
       "state": "Edo",
+      "senatorial_districts": [
+        "Edo South",
+        "Edo Central",
+        "Edo North"
+      ],
       "lgas": [
         "Afokpella",
         "Afuze",
@@ -343,6 +403,11 @@
     },
     {
       "state": "Ekiti",
+      "senatorial_districts": [
+        "Ekiti South",
+        "Ekiti Central",
+        "Ekiti North"
+      ],
       "lgas": [
         "Ado-Ekiti",
         "Aiyekire",
@@ -366,6 +431,11 @@
     },
     {
       "state": "Enugu",
+      "senatorial_districts": [
+        "Enugu North",
+        "Enugu East",
+        "Enugu West"
+      ],
       "lgas": [
         "Aninri",
         "Awgu",
@@ -389,6 +459,9 @@
     },
     {
       "state": "Federal Capital Territory",
+      "senatorial_districts": [
+        "Federal Capital Territory"
+      ],
       "lgas": [
         "Abaji",
         "Abuja Municipal",
@@ -400,6 +473,11 @@
     },
     {
       "state": "Gombe",
+      "senatorial_districts": [
+        "Gombe Central",
+        "Gombe North",
+        "Gombe South"
+      ],
       "lgas": [
         "Akko",
         "Balanga",
@@ -416,6 +494,11 @@
     },
     {
       "state": "Imo",
+      "senatorial_districts": [
+        "Imo East",
+        "Imo North",
+        "Imo West"
+      ],
       "lgas": [
         "Aboh-Mbaise",
         "Ahiazu-Mbaise",
@@ -457,6 +540,11 @@
     },
     {
       "state": "Jigawa",
+      "senatorial_districts": [
+        "Jigawa North - West",
+        "Jigawa North – East",
+        "Jigawa South – West"
+      ],
       "lgas": [
         "Auyo",
         "Babura",
@@ -489,6 +577,11 @@
     },
     {
       "state": "Kebbi",
+      "senatorial_districts": [
+        "Kebbi Central",
+        "Kebbi North",
+        "Kebbi South"
+      ],
       "lgas": [
         "Aleiro",
         "Arewa-Dandi",
@@ -516,6 +609,11 @@
     },
     {
       "state": "Kaduna",
+      "senatorial_districts": [
+        "Kaduna Central",
+        "Kaduna North",
+        "Kaduna South"
+      ],
       "lgas": [
         "Birnin-Gwari",
         "Chikun",
@@ -546,6 +644,11 @@
     },
     {
       "state": "Kano",
+      "senatorial_districts": [
+        "Kano South",
+        "Kano Central",
+        "Kano North"
+      ],
       "lgas": [
         "Ajingi",
         "Albasu",
@@ -594,6 +697,11 @@
     },
     {
       "state": "Kogi",
+      "senatorial_districts": [
+        "Kogi Central",
+        "Kogi East",
+        "Kogi West"
+      ],
       "lgas": [
         "Adavi",
         "Ajaokuta",
@@ -623,6 +731,11 @@
     },
     {
       "state": "Katsina",
+      "senatorial_districts": [
+        "Katsina Central",
+        "Katsina North",
+        "Katsina South"
+      ],
       "lgas": [
         "Bakori",
         "Batagarawa",
@@ -662,6 +775,11 @@
     },
     {
       "state": "Kwara",
+      "senatorial_districts": [
+        "Kwara Central",
+        "Kwara North",
+        "Kwara South"
+      ],
       "lgas": [
         "Asa",
         "Baruten",
@@ -683,6 +801,11 @@
     },
     {
       "state": "Lagos",
+      "senatorial_districts": [
+        "Lagos West",
+        "Lagos Central",
+        "Lagos East"
+      ],
       "lgas": [
         "Agege",
         "Ajeromi-Ifelodun",
@@ -696,7 +819,6 @@
         "Ifako-Ijaiye",
         "Ikeja",
         "Ikorodu",
-        "Island",
         "Kosofe",
         "Lagos-Island",
         "Lagos-Mainland",
@@ -705,12 +827,16 @@
         "Oshodi-Isolo",
         "Shomolu",
         "Somolu",
-        "Suru-Lere",
-        "Yewa-South"
+        "Surulere"
       ]
     },
     {
       "state": "Nassarawa",
+      "senatorial_districts": [
+        "Nassarawa South",
+        "Nassarawa North",
+        "Nassarawa West"
+      ],
       "lgas": [
         "Akwanga",
         "Awe",
@@ -728,6 +854,11 @@
     },
     {
       "state": "Niger",
+      "senatorial_districts": [
+        "Niger East",
+        "Niger North",
+        "Niger South"
+      ],
       "lgas": [
         "Agaie",
         "Agwara",
@@ -758,6 +889,11 @@
     },
     {
       "state": "Ogun",
+      "senatorial_districts": [
+        "Ogun Central",
+        "Ogun East",
+        "Ogun West"
+      ],
       "lgas": [
         "Abeokuta-North",
         "Abeokuta-South",
@@ -783,6 +919,11 @@
     },
     {
       "state": "Ondo",
+      "senatorial_districts": [
+        "Ondo Central",
+        "Ondo North",
+        "Ondo South"
+      ],
       "lgas": [
         "Akoko",
         "Akoko-North",
@@ -814,6 +955,11 @@
     },
     {
       "state": "Osun",
+      "senatorial_districts": [
+        "Osun Central",
+        "Osun East",
+        "Osun West"
+      ],
       "lgas": [
         "Atakumosa",
         "Atakumosa East",
@@ -851,6 +997,11 @@
     },
     {
       "state": "Oyo",
+      "senatorial_districts": [
+        "Oyo Central",
+        "Oyo North",
+        "Oyo South"
+      ],
       "lgas": [
         "Afijio",
         "Akinyele",
@@ -889,6 +1040,11 @@
     },
     {
       "state": "Plateau",
+      "senatorial_districts": [
+        "Plateau Central",
+        "Plateau North",
+        "Plateau South"
+      ],
       "lgas": [
         "Barkin-Ladi",
         "Bassa",
@@ -911,6 +1067,11 @@
     },
     {
       "state": "Rivers",
+      "senatorial_districts": [
+        "Rivers East",
+        "Rivers South East",
+        "Rivers West"
+      ],
       "lgas": [
         "Aboa\/Odual",
         "Ahoada-East",
@@ -942,6 +1103,11 @@
     },
     {
       "state": "Sokoto",
+      "senatorial_districts": [
+        "Sokoto East",
+        "Sokoto North",
+        "Sokoto South"
+      ],
       "lgas": [
         "Binji",
         "Bodinga",
@@ -969,6 +1135,11 @@
     },
     {
       "state": "Taraba",
+      "senatorial_districts": [
+        "Taraba Central",
+        "Taraba North",
+        "Taraba South"
+      ],
       "lgas": [
         "Ardo-Kola",
         "Bali",
@@ -991,6 +1162,11 @@
     },
     {
       "state": "Yobe",
+      "senatorial_districts": [
+        "Yobe East",
+        "Yobe North",
+        "Yobe South"
+      ],
       "lgas": [
         "Bade",
         "Borsali",
@@ -1014,6 +1190,11 @@
     },
     {
       "state": "Zamfara",
+      "senatorial_districts": [
+        "Zamfara Central",
+        "Zamfara North",
+        "Zamfara West"
+      ],
       "lgas": [
         "Anka",
         "Bakura",

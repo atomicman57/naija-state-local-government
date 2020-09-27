@@ -13,6 +13,17 @@ module.exports = {
             return nigeriaStates.state;
         });
     },
+    senatorial_districts: function (state) {
+        state = _lower(state);
+
+        if (!state || state == "") {
+            throw new Error('Invalid Nigeria State');
+        }
+
+        return statesAndLocalGov.find(function (nigeriaStates) {
+            return (_lower(nigeriaStates.state) === _lower(state)) ? nigeriaStates.senatorial_districts : 'not found'
+        });
+    },
     lgas: function (state) {
         state = _lower(state);
 
