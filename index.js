@@ -1,4 +1,4 @@
-const statesAndLocalGov = require('./src/statesAndLocalGov.json');
+var statesAndLocalGov = require('./src/statesAndLocalGov.json');
 
 function _lower(input) {
     if(input){
@@ -14,7 +14,7 @@ function isFCT(state) {
     return state
 }
 
-module.exports = {
+var NaijaStates = {
     all: function() {
         return statesAndLocalGov;
     },
@@ -24,17 +24,19 @@ module.exports = {
         });
     },
     senatorial_districts: function (state) {
-        const response = statesAndLocalGov.find(function (nigeriaStates) {
+        var response = statesAndLocalGov.find(function (nigeriaStates) {
             return _lower(nigeriaStates.state) === _lower(isFCT(state));
         });
         if (response) return response.senatorial_districts;
         return []
     },
     lgas: function (state) {
-        const response = statesAndLocalGov.find(function (nigeriaStates) {
+        var response = statesAndLocalGov.find(function (nigeriaStates) {
             return _lower(nigeriaStates.state) === _lower(isFCT(state));
         });
         if (response) return response;
         return {state:"", senatorial_districts: [], lgas: []}
     }
 };
+
+module.exports = NaijaStates
