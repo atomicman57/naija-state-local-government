@@ -1,7 +1,17 @@
-var statesAndLocalGov = require('./src/statesAndLocalGov.json');
+const statesAndLocalGov = require('./src/statesAndLocalGov.json');
 
 function _lower(input) {
-    return input.toLowerCase().trim()
+    if(input){
+        return input.toLowerCase().trim()
+    }
+    return ''
+}
+
+function isFCT(state) {
+    if (['fct', 'f.c.t', 'abuja', 'f c t'].includes(state)) {
+        return  'Federal Capital Territory'
+    }
+    return state
 }
 
 module.exports = {
@@ -14,34 +24,17 @@ module.exports = {
         });
     },
     senatorial_districts: function (state) {
-        state = _lower(state);
-
-        if (!state || state == "") {
-            throw new Error('Invalid Nigeria State');
-        }
-
-        if (['fct', 'f.c.t', 'abuja', 'f c t'].includes(state)) {
-            state = 'Federal Capital Territory'
-        }
-
         const response = statesAndLocalGov.find(function (nigeriaStates) {
-            return _lower(nigeriaStates.state) === _lower(state);
+            return _lower(nigeriaStates.state) === _lower(isFCT(state));
         });
-        return response.senatorial_districts;
+        if (response) return response.senatorial_districts;
+        return []
     },
     lgas: function (state) {
-        state = _lower(state);
-
-        if (!state || state == "") {
-            throw new Error('Invalid Nigeria State');
-        }
-
-        if (['fct', 'f.c.t', 'abuja', 'f c t'].includes(state)) {
-            state = 'Federal Capital Territory'
-        }
-
-        return statesAndLocalGov.find(function (nigeriaStates) {
-            return _lower(nigeriaStates.state) === _lower(state);
+        const response = statesAndLocalGov.find(function (nigeriaStates) {
+            return _lower(nigeriaStates.state) === _lower(isFCT(state));
         });
+        if (response) return response;
+        return {state:"", senatorial_districts: [], lgas: []}
     }
 };
