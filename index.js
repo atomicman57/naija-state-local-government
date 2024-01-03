@@ -1,319 +1,43 @@
-var statesAndLocalGov = require('./src/statesAndLocalGov.json');
+const statesAndLocalGov = require('./src/statesAndLocalGov.json');
 
-function _lower(input) {
-    return input.toLowerCase().trim()
-}
+const FCT_ALIASES = ['fct', 'f.c.t', 'abuja', 'f c t'];
+const FCT_NAME = 'Federal Capital Territory';
 
-module.exports = {
-    all: function() {
-        return statesAndLocalGov;
-    },
-    states: function () {
-        return statesAndLocalGov.map(function (nigeriaStates) {
-            return nigeriaStates.state;
-        });
-    },
-    senatorial_districts: function (state) {
-        state = _lower(state);
-
-        if (!state || state == "") {
-            throw new Error('Invalid Nigeria State');
-        }
-
-        if (['fct', 'f.c.t', 'abuja', 'f c t'].includes(state)) {
-            state = 'Federal Capital Territory'
-        }
-
-        const response = statesAndLocalGov.find(function (nigeriaStates) {
-            return _lower(nigeriaStates.state) === _lower(state);
-        });
-        return response.senatorial_districts;
-    },
-    lgas: function (state) {
-        state = _lower(state);
-
-        if (!state || state == "") {
-            throw new Error('Invalid Nigeria State');
-        }
-
-        if (['fct', 'f.c.t', 'abuja', 'f c t'].includes(state)) {
-            state = 'Federal Capital Territory'
-        }
-
-        return statesAndLocalGov.find(function (nigeriaStates) {
-            return _lower(nigeriaStates.state) === _lower(state);
-        });
+const normalize = (input) => {
+    if (!input || typeof input !== 'string') {
+        throw new Error('Invalid Nigeria State: Please provide a valid state name');
     }
+    return input.toLowerCase().trim();
 };
 
-// Performance optimization 1767459740285
+const normalizeFCT = (state) => {
+    return FCT_ALIASES.includes(state) ? FCT_NAME : state;
+};
 
-// Performance optimization 1767459740326
+const findStateData = (stateName) => {
+    const normalizedState = normalize(stateName);
+    const state = normalizeFCT(normalizedState);
 
-// Performance optimization 1767459740588
+    const stateData = statesAndLocalGov.find(
+        (item) => normalize(item.state) === normalize(state)
+    );
 
-// Performance optimization 1767459740770
+    if (!stateData) {
+        throw new Error(`State not found: ${stateName}`);
+    }
 
-// Performance optimization 1767459741114
+    return stateData;
+};
 
-// Performance optimization 1767459741172
+module.exports = {
+    all: () => statesAndLocalGov,
 
-// Performance optimization 1767459741475
+    states: () => statesAndLocalGov.map((item) => item.state),
 
-// Performance optimization 1767459741712
+    senatorial_districts: (state) => {
+        const stateData = findStateData(state);
+        return stateData.senatorial_districts;
+    },
 
-// Performance optimization 1767459741765
-
-// Performance optimization 1767459741974
-
-// Performance optimization 1767459742061
-
-// Performance optimization 1767459742101
-
-// Performance optimization 1767459742163
-
-// Performance optimization 1767459742207
-
-// Performance optimization 1767459742249
-
-// Performance optimization 1767459742306
-
-// Performance optimization 1767459742346
-
-// Performance optimization 1767459742391
-
-// Performance optimization 1767459742441
-
-// Performance optimization 1767459742516
-
-// Performance optimization 1767459742752
-
-// Performance optimization 1767459742940
-
-// Performance optimization 1767459743170
-
-// Performance optimization 1767459743276
-
-// Performance optimization 1767459743331
-
-// Performance optimization 1767459743402
-
-// Performance optimization 1767459743460
-
-// Performance optimization 1767459743521
-
-// Performance optimization 1767459743565
-
-// Performance optimization 1767459743610
-
-// Performance optimization 1767459743661
-
-// Performance optimization 1767459743727
-
-// Performance optimization 1767459743771
-
-// Performance optimization 1767459743812
-
-// Performance optimization 1767459743852
-
-// Performance optimization 1767459743895
-
-// Performance optimization 1767459744039
-
-// Performance optimization 1767459744093
-
-// Performance optimization 1767459744136
-
-// Performance optimization 1767459744178
-
-// Performance optimization 1767459744220
-
-// Performance optimization 1767459744269
-
-// Performance optimization 1767459744331
-
-// Performance optimization 1767459744405
-
-// Performance optimization 1767459744496
-
-// Performance optimization 1767459744558
-
-// Performance optimization 1767459744609
-
-// Performance optimization 1767459744676
-
-// Performance optimization 1767459744735
-
-// Performance optimization 1767459744788
-
-// Performance optimization 1767459744842
-
-// Performance optimization 1767459745027
-
-// Performance optimization 1767459745086
-
-// Performance optimization 1767459745148
-
-// Performance optimization 1767459745338
-
-// Performance optimization 1767459745379
-
-// Performance optimization 1767459745545
-
-// Performance optimization 1767459745631
-
-// Performance optimization 1767459745912
-
-// Performance optimization 1767459746030
-
-// Performance optimization 1767459746070
-
-// Performance optimization 1767459746114
-
-// Performance optimization 1767459746291
-
-// Performance optimization 1767459746506
-
-// Performance optimization 1767459746692
-
-// Performance optimization 1767459746745
-
-// Performance optimization 1767459746893
-
-// Performance optimization 1767459747035
-
-// Performance optimization 1767459747209
-
-// Performance optimization 1767459747339
-
-// Performance optimization 1767459747384
-
-// Performance optimization 1767459747505
-
-// Performance optimization 1767459747630
-
-// Performance optimization 1767459747676
-
-// Performance optimization 1767459747728
-
-// Performance optimization 1767459747873
-
-// Performance optimization 1767459748021
-
-// Performance optimization 1767459748139
-
-// Performance optimization 1767459748270
-
-// Performance optimization 1767459748356
-
-// Performance optimization 1767459748569
-
-// Performance optimization 1767459748700
-
-// Performance optimization 1767459748787
-
-// Performance optimization 1767459748826
-
-// Performance optimization 1767459749451
-
-// Performance optimization 1767459749499
-
-// Performance optimization 1767459749701
-
-// Performance optimization 1767459749752
-
-// Performance optimization 1767459749926
-
-// Performance optimization 1767459750116
-
-// Performance optimization 1767459750289
-
-// Performance optimization 1767459750329
-
-// Performance optimization 1767459750409
-
-// Performance optimization 1767459750607
-
-// Performance optimization 1767459750651
-
-// Performance optimization 1767459750779
-
-// Performance optimization 1767459750819
-
-// Performance optimization 1767459750935
-
-// Performance optimization 1767459751055
-
-// Performance optimization 1767459751103
-
-// Performance optimization 1767459751154
-
-// Performance optimization 1767459751261
-
-// Performance optimization 1767459751412
-
-// Performance optimization 1767459751461
-
-// Performance optimization 1767459751570
-
-// Performance optimization 1767459751753
-
-// Performance optimization 1767459751842
-
-// Performance optimization 1767459751959
-
-// Performance optimization 1767459752037
-
-// Performance optimization 1767459752075
-
-// Performance optimization 1767459752192
-
-// Performance optimization 1767459752231
-
-// Performance optimization 1767459752270
-
-// Performance optimization 1767459752386
-
-// Performance optimization 1767459752424
-
-// Performance optimization 1767459752465
-
-// Performance optimization 1767459752603
-
-// Performance optimization 1767459752746
-
-// Performance optimization 1767459752860
-
-// Performance optimization 1767459753004
-
-// Performance optimization 1767459753056
-
-// Performance optimization 1767459753405
-
-// Performance optimization 1767459753448
-
-// Performance optimization 1767459753616
-
-// Performance optimization 1767459753655
-
-// Performance optimization 1767459753697
-
-// Performance optimization 1767459753818
-
-// Enhancement 1767459782343
-
-// Enhancement 1767459782387
-
-// Enhancement 1767459782528
-
-// Enhancement 1767459782574
-
-// Enhancement 1767459782697
-
-// Enhancement 1767459782741
-
-// Enhancement 1767459782790
-
-// Enhancement 1767459782845
-
-// Enhancement 1767459782890
+    lgas: (state) => findStateData(state)
+};
