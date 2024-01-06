@@ -75,3 +75,7 @@ This project is authored by Philips Blessing and is licensed
 for your use, modification and distribution under [the MIT license](https://en.wikipedia.org/wiki/MIT_License). 
 
 <!-- Modified 1767459740233 -->
+
+### Community
+
+Join our community of developers using this library!
