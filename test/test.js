@@ -1,39 +1,78 @@
-'use strict';
+import { strict as assert } from 'assert';
+import naijaStates from '../index.js';
+import statesAndLocalGov from '../src/statesAndLocalGov.json' assert { type: 'json' };
 
-var assert = require('assert');
-var naijaStates = require('..');
-var statesAndLocalGov = require('../src/statesAndLocalGov.json')
+describe('naija-state-local-gov', () => {
+    describe('#all()', () => {
+        it('should return all states and local governments', () => {
+            const response = naijaStates.all();
 
-
-describe('naija-state-local-gov', function() {
-    it('#all()', function() {
-        var response = naijaStates.all();
-
-        assert.equal(response.length, 37);
-        assert.equal(typeof response, typeof []);
-        assert.equal(response[1].state, statesAndLocalGov[1].state);
-        assert.equal(response[1].lgas.length, statesAndLocalGov[1].lgas.length);
+            assert.equal(response.length, 37);
+            assert.ok(Array.isArray(response));
+            assert.equal(response[1].state, statesAndLocalGov[1].state);
+            assert.equal(response[1].lgas.length, statesAndLocalGov[1].lgas.length);
+        });
     });
 
-    it('#states()', function() {
-        var response = naijaStates.states();
+    describe('#states()', () => {
+        it('should return all Nigeria states', () => {
+            const response = naijaStates.states();
 
-        assert.equal(response.length, 37);
-        assert.equal(typeof response, typeof []);
-        assert.equal(response[1], statesAndLocalGov[1].state);
-        assert.equal(response[36], 'Zamfara');
+            assert.equal(response.length, 37);
+            assert.ok(Array.isArray(response));
+            assert.equal(response[1], statesAndLocalGov[1].state);
+            assert.equal(response[36], 'Zamfara');
+        });
     });
 
-    it('#senatorial_districts()', function() {
-        var response = naijaStates.senatorial_districts('Lagos');
-       
-        assert.equal(response.length, 3);
+    describe('#senatorial_districts()', () => {
+        it('should return senatorial districts for Lagos', () => {
+            const response = naijaStates.senatorial_districts('Lagos');
+            assert.equal(response.length, 3);
+        });
+
+        it('should throw error for invalid state', () => {
+            assert.throws(
+                () => naijaStates.senatorial_districts(''),
+                /Invalid Nigeria State/
+            );
+        });
+
+        it('should throw error for non-existent state', () => {
+            assert.throws(
+                () => naijaStates.senatorial_districts('InvalidState'),
+                /State "invalidstate" not found/
+            );
+        });
+
+        it('should handle FCT aliases', () => {
+            const response = naijaStates.senatorial_districts('abuja');
+            assert.ok(Array.isArray(response));
+        });
     });
 
-    it('#lgas()', function() {
-        var response = naijaStates.lgas('Lagos');
+    describe('#lgas()', () => {
+        it('should return LGAs for Lagos state', () => {
+            const response = naijaStates.lgas('Lagos');
 
-        assert.equal(response.state, 'Lagos');
-        assert.equal(response.lgas.length, 21);
+            assert.equal(response.state, 'Lagos');
+            assert.equal(response.lgas.length, 21);
+        });
+
+        it('should be case insensitive', () => {
+            const response = naijaStates.lgas('LAGOS');
+            assert.equal(response.state, 'Lagos');
+        });
+
+        it('should throw error for invalid state', () => {
+            assert.throws(() => naijaStates.lgas(''), /Invalid Nigeria State/);
+        });
+
+        it('should throw error for non-existent state', () => {
+            assert.throws(
+                () => naijaStates.lgas('InvalidState'),
+                /State "invalidstate" not found/
+            );
+        });
     });
 });
