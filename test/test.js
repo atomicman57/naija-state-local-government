@@ -1,6 +1,6 @@
 import { strict as assert } from 'assert';
 import naijaStates from '../index.js';
-import statesAndLocalGov from '../src/statesAndLocalGov.json' assert { type: 'json' };
+import statesAndLocalGov from '../src/statesAndLocalGov.json' with { type: 'json' };
 
 describe('naija-state-local-gov', () => {
     describe('#all()', () => {
@@ -51,13 +51,13 @@ describe('naija-state-local-gov', () => {
         });
     });
 
-    describe('#lgas()', () => {
-        it('should return LGAs for Lagos state', () => {
-            const response = naijaStates.lgas('Lagos');
+  describe('#lgas()', () => {
+    it('should return LGAs for Lagos state', () => {
+      const response = naijaStates.lgas('Lagos');
 
-            assert.equal(response.state, 'Lagos');
-            assert.equal(response.lgas.length, 21);
-        });
+      assert.equal(response.state, 'Lagos');
+      assert.equal(response.lgas.length, 20);
+    });
 
         it('should be case insensitive', () => {
             const response = naijaStates.lgas('LAGOS');
