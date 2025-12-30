@@ -1,10 +1,21 @@
 {
   "name": "naija-state-local-government",
-  "version": "1.1.2",
-  "description": "A simple utility library that lists Nigeria states and local governments with zero dependency",
+  "version": "2.0.0",
+  "description": "A modern utility library that lists Nigeria states and local governments with zero dependencies",
+  "type": "module",
   "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "eslint .",
+    "format": "prettier --write \"**/*.{js,json,md}\""
   },
   "repository": {
     "type": "git",
@@ -22,7 +33,10 @@
     "City",
     "Naija",
     "Lga",
-    "Local-government"
+    "Local-government",
+    "ESM",
+    "ES6",
+    "TypeScript"
   ],
   "author": "Philips Blessing",
   "license": "MIT",
@@ -31,7 +45,12 @@
   },
   "homepage": "https://github.com/atomicman57/naija-state-local-government#readme",
   "devDependencies": {
-    "assert": "^1.4.1",
-    "mocha": "^5.0.0"
+    "chai": "^5.1.2",
+    "eslint": "^9.16.0",
+    "mocha": "^11.0.1",
+    "prettier": "^3.4.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
