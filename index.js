@@ -1,47 +1,59 @@
-var statesAndLocalGov = require('./src/statesAndLocalGov.json');
+import statesAndLocalGov from './src/statesAndLocalGov.json' assert { type: 'json' };
 
-function _lower(input) {
-    return input.toLowerCase().trim()
-}
+const _lower = (input) => input.toLowerCase().trim();
 
-module.exports = {
-    all: function() {
-        return statesAndLocalGov;
-    },
-    states: function () {
-        return statesAndLocalGov.map(function (nigeriaStates) {
-            return nigeriaStates.state;
-        });
-    },
-    senatorial_districts: function (state) {
-        state = _lower(state);
+export const all = () => statesAndLocalGov;
 
-        if (!state || state == "") {
-            throw new Error('Invalid Nigeria State');
-        }
+export const states = () =>
+    statesAndLocalGov.map((nigeriaStates) => nigeriaStates.state);
 
-        if (['fct', 'f.c.t', 'abuja', 'f c t'].includes(state)) {
-            state = 'Federal Capital Territory'
-        }
+export const senatorial_districts = (state) => {
+    state = _lower(state);
 
-        const response = statesAndLocalGov.find(function (nigeriaStates) {
-            return _lower(nigeriaStates.state) === _lower(state);
-        });
-        return response.senatorial_districts;
-    },
-    lgas: function (state) {
-        state = _lower(state);
-
-        if (!state || state == "") {
-            throw new Error('Invalid Nigeria State');
-        }
-
-        if (['fct', 'f.c.t', 'abuja', 'f c t'].includes(state)) {
-            state = 'Federal Capital Territory'
-        }
-
-        return statesAndLocalGov.find(function (nigeriaStates) {
-            return _lower(nigeriaStates.state) === _lower(state);
-        });
+    if (!state || state === '') {
+        throw new Error('Invalid Nigeria State');
     }
+
+    if (['fct', 'f.c.t', 'abuja', 'f c t'].includes(state)) {
+        state = 'Federal Capital Territory';
+    }
+
+    const response = statesAndLocalGov.find(
+        (nigeriaStates) => _lower(nigeriaStates.state) === _lower(state)
+    );
+
+    if (!response) {
+        throw new Error(`State "${state}" not found`);
+    }
+
+    return response.senatorial_districts;
+};
+
+export const lgas = (state) => {
+    state = _lower(state);
+
+    if (!state || state === '') {
+        throw new Error('Invalid Nigeria State');
+    }
+
+    if (['fct', 'f.c.t', 'abuja', 'f c t'].includes(state)) {
+        state = 'Federal Capital Territory';
+    }
+
+    const response = statesAndLocalGov.find(
+        (nigeriaStates) => _lower(nigeriaStates.state) === _lower(state)
+    );
+
+    if (!response) {
+        throw new Error(`State "${state}" not found`);
+    }
+
+    return response;
+};
+
+export default {
+    all,
+    states,
+    senatorial_districts,
+    lgas,
 };
