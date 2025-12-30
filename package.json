@@ -14,7 +14,6 @@
   },
   "scripts": {
     "test": "mocha",
-    "lint": "eslint .",
     "format": "prettier --write \"**/*.{js,json,md}\""
   },
   "repository": {

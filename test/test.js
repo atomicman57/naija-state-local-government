@@ -1,5 +1,6 @@
 import { strict as assert } from 'assert';
 import naijaStates from '../index.js';
+// eslint-disable-next-line
 import statesAndLocalGov from '../src/statesAndLocalGov.json' with { type: 'json' };
 
 describe('naija-state-local-gov', () => {

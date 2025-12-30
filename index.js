@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import statesAndLocalGov from './src/statesAndLocalGov.json' with { type: 'json' };
 
 const _lower = (input) => input.toLowerCase().trim();
