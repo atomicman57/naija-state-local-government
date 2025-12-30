@@ -1,2 +1,8 @@
 node_modules/
-.idea/
+*.log
+.DS_Store
+coverage/
+.nyc_output/
+dist/
+.env
+.env.local
