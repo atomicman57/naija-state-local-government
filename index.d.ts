@@ -116,7 +116,10 @@ export function is_valid_state(state: string): boolean;
  * @param lgaName - The name of the LGA (case-insensitive)
  * @param stateName - Optional state name to narrow the search
  */
-export function is_valid_lga(lgaName: string, stateName?: string | null): boolean;
+export function is_valid_lga(
+  lgaName: string,
+  stateName?: string | null
+): boolean;
 
 /**
  * Returns a random state
@@ -174,4 +177,3 @@ declare const _default: {
 };
 
 export default _default;
-

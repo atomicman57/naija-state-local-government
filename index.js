@@ -138,7 +138,7 @@ export const senatorial_district_count = (state) => {
 // Check if a state is valid
 export const is_valid_state = (state) => {
     if (!state || state === '') return false;
-    
+
     state = _lower(state);
 
     if (['fct', 'f.c.t', 'abuja', 'f c t'].includes(state)) {

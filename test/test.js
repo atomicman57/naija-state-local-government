@@ -52,13 +52,13 @@ describe('naija-state-local-gov', () => {
         });
     });
 
-  describe('#lgas()', () => {
-    it('should return LGAs for Lagos state', () => {
-      const response = naijaStates.lgas('Lagos');
+    describe('#lgas()', () => {
+        it('should return LGAs for Lagos state', () => {
+            const response = naijaStates.lgas('Lagos');
 
-      assert.equal(response.state, 'Lagos');
-      assert.equal(response.lgas.length, 20);
-    });
+            assert.equal(response.state, 'Lagos');
+            assert.equal(response.lgas.length, 20);
+        });
 
         it('should be case insensitive', () => {
             const response = naijaStates.lgas('LAGOS');
@@ -82,7 +82,7 @@ describe('New Features', () => {
     describe('#geopolitical_zones()', () => {
         it('should return all geopolitical zones with their states', () => {
             const zones = naijaStates.geopolitical_zones();
-            
+
             assert.ok(typeof zones === 'object');
             assert.ok('South West' in zones);
             assert.ok('South East' in zones);
@@ -98,7 +98,7 @@ describe('New Features', () => {
     describe('#states_in_zone()', () => {
         it('should return states in South West zone', () => {
             const states = naijaStates.states_in_zone('South West');
-            
+
             assert.ok(Array.isArray(states));
             assert.ok(states.includes('Lagos'));
             assert.ok(states.includes('Oyo'));
@@ -127,7 +127,7 @@ describe('New Features', () => {
     describe('#state_by_capital()', () => {
         it('should return state by capital name', () => {
             const state = naijaStates.state_by_capital('Ikeja');
-            
+
             assert.equal(state.state, 'Lagos');
             assert.equal(state.capital, 'Ikeja');
             assert.ok(state.lgas);
@@ -156,7 +156,7 @@ describe('New Features', () => {
     describe('#lga_state()', () => {
         it('should return state info for an LGA', () => {
             const result = naijaStates.lga_state('Alimosho');
-            
+
             assert.equal(result.lga, 'Alimosho');
             assert.equal(result.state, 'Lagos');
             assert.equal(result.capital, 'Ikeja');
@@ -250,7 +250,7 @@ describe('New Features', () => {
     describe('#random_state()', () => {
         it('should return a random state object', () => {
             const state = naijaStates.random_state();
-            
+
             assert.ok(state.state);
             assert.ok(state.capital);
             assert.ok(state.lgas);
@@ -261,7 +261,7 @@ describe('New Features', () => {
     describe('#random_lga()', () => {
         it('should return a random LGA with state info', () => {
             const result = naijaStates.random_lga();
-            
+
             assert.ok(result.lga);
             assert.ok(result.state);
             assert.ok(result.capital);
@@ -272,7 +272,7 @@ describe('New Features', () => {
     describe('#search_state()', () => {
         it('should search states by partial name', () => {
             const results = naijaStates.search_state('lag');
-            
+
             assert.ok(Array.isArray(results));
             assert.ok(results.length > 0);
             assert.ok(results.some((state) => state.state === 'Lagos'));
@@ -299,7 +299,7 @@ describe('New Features', () => {
     describe('#search_lga()', () => {
         it('should search LGAs by partial name', () => {
             const results = naijaStates.search_lga('iba');
-            
+
             assert.ok(Array.isArray(results));
             assert.ok(results.length > 0);
             assert.ok(results[0].lga);
@@ -327,7 +327,7 @@ describe('New Features', () => {
     describe('#capitals()', () => {
         it('should return all state capitals', () => {
             const caps = naijaStates.capitals();
-            
+
             assert.ok(Array.isArray(caps));
             assert.equal(caps.length, 37);
             assert.ok(caps[0].state);
@@ -339,7 +339,7 @@ describe('New Features', () => {
     describe('#statistics()', () => {
         it('should return statistics about states and LGAs', () => {
             const stats = naijaStates.statistics();
-            
+
             assert.equal(stats.totalStates, 37);
             assert.equal(stats.totalLGAs, 776); // Current data count
             assert.ok(stats.averageLGAsPerState);
